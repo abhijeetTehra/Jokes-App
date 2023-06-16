@@ -74,10 +74,6 @@ const Jokes = ({joke, setJoke, setRate, randomJoke, color}) => {
                 }else{
                     localStorage.bookmarks = JSON.stringify(joke);
                 }
-                console.log(localStorage.bookmarks)
-                console.log(localStorage.bookmarks.split("$").map(a=>{
-                    return JSON.parse(a);
-                }))
             }}>Bookmark</button>
         </div> :
         <></>

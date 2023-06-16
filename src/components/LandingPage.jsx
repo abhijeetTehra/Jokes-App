@@ -10,7 +10,6 @@ const LandingPage = () => {
     const randomJoke = () => {
         getBookMarks();
         axios.get("https://official-joke-api.appspot.com/random_joke").then(response => {
-            console.log(response);
             setJoke({ ...response.data, rating: 0, type:response.data.type.toUpperCase() });
         })
     }
@@ -27,7 +26,6 @@ const LandingPage = () => {
         <header id="headerContainer" className="m-4 container d-flex justify-content-around align-items-center">
             <input type="color" onChange={(e)=>{
                 setColor(e.target.value)
-                console.log(e.target.value);
             }} />
             <h1 className="text-dark">Jokes App</h1>
             <button className="btn btn-info" id="bookmarkButton" onClick={() => {
@@ -42,7 +40,6 @@ const LandingPage = () => {
                     <>
                         <button className="btn btn-danger mb-2" id="clearBookmarks" onClick={() => {
                             localStorage.removeItem("bookmarks");
-                            console.log(localStorage.bookMarks);
                             setBookMarks([]);
                             setIsBookMark(false);
                         }}>Clear BookMarks</button>
