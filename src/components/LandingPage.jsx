@@ -21,10 +21,14 @@ const LandingPage = () => {
             }));
         }
     }
+    const [color, setColor] = useState("beige");
     useEffect(randomJoke, []);
     return <section id="landingPage" className="container">
         <header id="headerContainer" className="m-4 container d-flex justify-content-around align-items-center">
-            <input type="color" defaultValue="bisque" />
+            <input type="color" onChange={(e)=>{
+                setColor(e.target.value)
+                console.log(e.target.value);
+            }} />
             <h1 className="text-dark">Jokes App</h1>
             <button className="btn btn-info" id="bookmarkButton" onClick={() => {
                 getBookMarks();
@@ -44,14 +48,14 @@ const LandingPage = () => {
                         }}>Clear BookMarks</button>
                         {
                             bookMarks.map((joke, index) => {
-                                return <Jokes key={index} joke={joke} setRate={false} />
+                                return <Jokes key={index} joke={joke} setRate={false} color={color} />
                             })
                         }
                     </>
                     :
                     <>No BookMarks Yet</>
                 :
-                <Jokes joke={joke} setJoke={setJoke} setRate={true} randomJoke={randomJoke} />
+                <Jokes joke={joke} setJoke={setJoke} setRate={true} randomJoke={randomJoke} color={color} />
         }
         </div>
     </section>

@@ -1,8 +1,8 @@
 import { FaStar } from "react-icons/fa";
 import "../styles/jokes.css"
 
-const Jokes = ({joke, setJoke, setRate, randomJoke}) => {
-    return <section key={joke.id} className="p-4 col-4 border border-primary joke mt-2 mb-2">
+const Jokes = ({joke, setJoke, setRate, randomJoke, color}) => {
+    return <section key={joke.id} className="p-4 col-4 border border-primary joke mt-2 mb-2" style={{background:`${color}`}}>
     <h3 className="col-form-label text-primary">{joke.type}</h3>
     <h4 className="col-form-label text-success">{joke.setup}</h4>
     <h4 className="col-form-label text-info">{joke.punchline}</h4>
