@@ -55,6 +55,11 @@ const LandingPage = () => {
                 <Jokes joke={joke} setJoke={setJoke} setRate={true} randomJoke={randomJoke} color={color} />
         }
         </div>
+        { isBookMark ?
+            <div class="bookmarksPageTrial">BookMarks Page</div>
+            :
+            <div class="homePageTrial>Home Page</div>
+        }
     </section>
 }
 
