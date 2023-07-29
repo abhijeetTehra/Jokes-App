@@ -58,7 +58,7 @@ const LandingPage = () => {
         { isBookMark ?
             <div class="bookmarksPageTrial">BookMarks Page</div>
             :
-            <div class="homePageTrial>Home Page</div>
+            <div class="homePageTrial">Home Page</div>
         }
     </section>
 }
